@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IBx-mF-gc9">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Trivia View Controller-->
+        <scene sceneID="MXR-T4-aau">
+            <objects>
+                <viewController id="IBx-mF-gc9" customClass="TriviaViewController" customModule="Trivia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vcf-xo-Ozz">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6G1-8H-0Te">
+                                <rect key="frame" x="140" y="79" width="113.33333333333331" height="34.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USc-Y3-bSd">
+                                <rect key="frame" x="152.66666666666666" y="128.66666666666666" width="88" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r2v-3s-1MS">
+                                <rect key="frame" x="24" y="218" width="345" height="223"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="223" id="Gkf-OM-XPe"/>
+                                    <constraint firstAttribute="width" constant="345" id="aS9-bJ-OAN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hik-dN-PiT">
+                                <rect key="frame" x="24" y="475" width="345" height="65"/>
+                                <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="345" id="eac-Sk-UVw"/>
+                                    <constraint firstAttribute="height" constant="65" id="yJ8-c5-Ajp"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Choice 1">
+                                    <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="choice1Button:" destination="IBx-mF-gc9" eventType="touchUpInside" id="hX8-kq-x3c"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZL-gJ-7sL">
+                                <rect key="frame" x="24" y="562" width="345" height="65"/>
+                                <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="Cei-KA-lfj"/>
+                                    <constraint firstAttribute="width" constant="345" id="vZO-wT-nkO"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Choice 2">
+                                    <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="choice2Button:" destination="IBx-mF-gc9" eventType="touchUpInside" id="ILG-V0-hSX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlE-0R-m0a">
+                                <rect key="frame" x="24" y="649" width="345" height="65"/>
+                                <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="345" id="Ckn-Oa-Rod"/>
+                                    <constraint firstAttribute="height" constant="65" id="gZo-te-AvC"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Choice 3">
+                                    <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="choice3Button:" destination="IBx-mF-gc9" eventType="touchUpInside" id="QQA-oF-0YB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VIV-Rh-TjS">
+                                <rect key="frame" x="24" y="736" width="345" height="65"/>
+                                <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="Dhd-73-7md"/>
+                                    <constraint firstAttribute="width" constant="345" id="tqD-5d-2tV"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Choice 4">
+                                    <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="choice4Button:" destination="IBx-mF-gc9" eventType="touchUpInside" id="Ln3-Xs-sjL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jub-gZ-q6q"/>
+                        <color key="backgroundColor" systemColor="systemCyanColor"/>
+                        <constraints>
+                            <constraint firstItem="USc-Y3-bSd" firstAttribute="top" secondItem="6G1-8H-0Te" secondAttribute="bottom" constant="15" id="5XV-Aa-vzT"/>
+                            <constraint firstItem="rlE-0R-m0a" firstAttribute="centerX" secondItem="Vcf-xo-Ozz" secondAttribute="centerX" id="8MD-pq-e5b"/>
+                            <constraint firstItem="r2v-3s-1MS" firstAttribute="centerX" secondItem="Vcf-xo-Ozz" secondAttribute="centerX" id="GI3-MK-N42"/>
+                            <constraint firstItem="rlE-0R-m0a" firstAttribute="top" secondItem="VZL-gJ-7sL" secondAttribute="bottom" constant="22" id="MWX-S7-KMr"/>
+                            <constraint firstItem="6G1-8H-0Te" firstAttribute="top" secondItem="jub-gZ-q6q" secondAttribute="top" constant="20" id="NIS-Xc-9Mv"/>
+                            <constraint firstItem="Hik-dN-PiT" firstAttribute="centerX" secondItem="Vcf-xo-Ozz" secondAttribute="centerX" id="Qos-qk-uBh"/>
+                            <constraint firstItem="VIV-Rh-TjS" firstAttribute="centerX" secondItem="Vcf-xo-Ozz" secondAttribute="centerX" id="R5e-V3-eyO"/>
+                            <constraint firstItem="r2v-3s-1MS" firstAttribute="top" secondItem="USc-Y3-bSd" secondAttribute="bottom" constant="62.329999999999998" id="YP2-85-X8h"/>
+                            <constraint firstItem="6G1-8H-0Te" firstAttribute="centerX" secondItem="Vcf-xo-Ozz" secondAttribute="centerX" id="ca7-f2-D4B"/>
+                            <constraint firstItem="USc-Y3-bSd" firstAttribute="centerX" secondItem="Vcf-xo-Ozz" secondAttribute="centerX" id="cck-Wy-40n"/>
+                            <constraint firstItem="VZL-gJ-7sL" firstAttribute="top" secondItem="Hik-dN-PiT" secondAttribute="bottom" constant="22" id="eo1-KV-zhM"/>
+                            <constraint firstItem="VIV-Rh-TjS" firstAttribute="top" secondItem="rlE-0R-m0a" secondAttribute="bottom" constant="22" id="gwW-Yz-lXJ"/>
+                            <constraint firstItem="Hik-dN-PiT" firstAttribute="top" secondItem="r2v-3s-1MS" secondAttribute="bottom" constant="34" id="gxw-EL-XD6"/>
+                            <constraint firstItem="VZL-gJ-7sL" firstAttribute="centerX" secondItem="Vcf-xo-Ozz" secondAttribute="centerX" id="vi8-YJ-XaT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="categoryLabel" destination="USc-Y3-bSd" id="949-DA-yPB"/>
+                        <outlet property="choice1Button" destination="Hik-dN-PiT" id="ADz-2z-Dlx"/>
+                        <outlet property="choice2Button" destination="VZL-gJ-7sL" id="GhW-tx-Eg3"/>
+                        <outlet property="choice3Button" destination="rlE-0R-m0a" id="1Ib-rR-f8D"/>
+                        <outlet property="choice4Button" destination="VIV-Rh-TjS" id="utp-cI-iiO"/>
+                        <outlet property="questionDescriptionLabel" destination="r2v-3s-1MS" id="8Tb-al-v3m"/>
+                        <outlet property="questionNumberLabel" destination="6G1-8H-0Te" id="pUG-p4-9lC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cfx-ZE-vuC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-89.312977099236633" y="-28.169014084507044"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.1960784314" green="0.67843137249999996" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
