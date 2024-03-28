@@ -7,13 +7,6 @@
 
 import UIKit
 
-struct Question {
-    let category: String
-    let question: String
-    let correct_answer: String
-    let incorrect_answers: [String]
-}
-
 class TriviaViewController: UIViewController {
     
     
@@ -21,7 +14,7 @@ class TriviaViewController: UIViewController {
     
     @IBOutlet weak var categoryLabel: UILabel!
     
-    @IBOutlet weak var questionDescriptionLabel: UILabel!
+    @IBOutlet weak var questionLabel: UILabel!
     
     @IBOutlet weak var choice1Button: UIButton!
 
@@ -31,62 +24,64 @@ class TriviaViewController: UIViewController {
     
     @IBOutlet weak var choice4Button: UIButton!
     
-    private var questions = [Trivia]() // tracks all the possible forecasts
-    private var selectedquestionIndex = 0 // tracks which forecast is being shown, defaults to 0
+    private var triviaQuestions = [TriviaQuestion]() // tracks all the possible questions
+    private var currentQuestionIndex = 0 // tracks which forecast is being shown, defaults to 0
     // Function override for the view controller
     // This is fired when the view has finished loading for the first time
     override func viewDidLoad() {
         // Some functions require you to call the super class implementation
         // Always read the online documentation to know if you need to
         super.viewDidLoad()
-                
-        questions = createMockData()
+        fetchTriviaQuestions()
         
-        TriviaQuestionService.fetchTriviaQuestions(amount: 10) { trivia in
-            self.configure(with: trivia)
-            
+    }
+    
+    private func fetchTriviaQuestions() {
+        TriviaQuestionService.fetchTriviaQuestions(amount: 10) { [weak self] questions in
+            self?.triviaQuestions = questions
+            self?.updateUI()
         }
-        
-//        configure(with: questions[selectedquestionIndex])
     }
     
-    private func createMockData() -> [Trivia] {
-        let mockData1 = Trivia(questionNumer: "Question 1/3", category: "Math", questionDescription: "What is 9 * 3?", choices: ["93", "27", "18", "12"])
-        let mockData2 = Trivia(questionNumer: "Question 2/3", category: "Space", questionDescription: "What is the third planet in our solar system from the sun?", choices: ["Earth", "Mercury", "Mars", "Neptune"])
-        let mockData3 = Trivia(questionNumer: "Question 3/3", category: "Formula 1", questionDescription: "How many world championships does Lewis Hamilton have?", choices: ["9", "8", "4", "7"])
-        
-        return [mockData1, mockData2, mockData3]
-    }
-    
-    private func configure(with trivia: TriviaQuestion) {
-        categoryLabel.text = trivia.category
-        questionDescriptionLabel.text = trivia.question
-        
-        choice1Button.setTitle(trivia.correct_answer, for: .normal)
-        choice2Button.setTitle(trivia.incorrect_answers[0], for: .normal)
-        choice3Button.setTitle(trivia.incorrect_answers[1], for: .normal)
-        choice4Button.setTitle(trivia.incorrect_answers[2], for: .normal)
-    }
-    
-    
+    private func updateUI() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            guard self.currentQuestionIndex < self.triviaQuestions.count else {
+                return
+            }
+            let currentQuestion = self.triviaQuestions[self.currentQuestionIndex]
+          
+            self.categoryLabel.text = currentQuestion.category
+            self.questionLabel.text = currentQuestion.question
+            self.choice1Button.setTitle(currentQuestion.correctAnswer, for: .normal)
+            self.choice2Button.setTitle(currentQuestion.incorrectAnswers[0], for: .normal)
+            if currentQuestion.incorrectAnswers.count >= 2 {
+                self.choice3Button.setTitle(currentQuestion.incorrectAnswers[1], for: .normal)
+            } else {
+                self.choice3Button.setTitle("", for: .normal) // Set a default text
+                self.choice3Button.isEnabled = false // Disable the button
+            }
+            if currentQuestion.incorrectAnswers.count >= 3 {
+                self.choice4Button.setTitle(currentQuestion.incorrectAnswers[2], for: .normal)
+            } else {
+                self.choice4Button.setTitle("", for: .normal) // Set a default text
+                self.choice4Button.isEnabled = false // Disable the button
+            }
 
-    @IBAction func choice1Button(_ sender: UIButton) {
-        selectedquestionIndex = min(questions.count - 1, selectedquestionIndex + 1) // don't go higher than the last index
-        configure(with: questions[selectedquestionIndex])
+            // Reset the state of choice3Button and choice4Button
+            if currentQuestion.incorrectAnswers.count == 1 {
+                self.choice3Button.isEnabled = true
+                self.choice4Button.isEnabled = true
+            }
+            
+            self.questionNumberLabel.text = "Question: \(self.currentQuestionIndex + 1)/\(self.triviaQuestions.count)"
+        }
     }
+
+
     
-    @IBAction func choice2Button(_ sender: UIButton) {
-        selectedquestionIndex = min(questions.count - 1, selectedquestionIndex + 1) // don't go higher than the last index
-        configure(with: questions[selectedquestionIndex])
-    }
-    
-    @IBAction func choice3Button(_ sender: UIButton) {
-        selectedquestionIndex = min(questions.count - 1, selectedquestionIndex + 1) // don't go higher than the last index
-        configure(with: questions[selectedquestionIndex])
-    }
-    
-    @IBAction func choice4Button(_ sender: UIButton) {
-        selectedquestionIndex = min(questions.count - 1, selectedquestionIndex + 1) // don't go higher than the last index
-        configure(with: questions[selectedquestionIndex])
+    @IBAction func choiceButtonTapped(_ sender: UIButton) {
+        currentQuestionIndex += 1
+        updateUI()
     }
 }

@@ -10,7 +10,6 @@
 		143103012BA928CF0070AC6F /* TriviaQuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143103002BA928CF0070AC6F /* TriviaQuestionService.swift */; };
 		143103032BA92F300070AC6F /* TriviaQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143103022BA92F300070AC6F /* TriviaQuestion.swift */; };
 		14BD6D352BA14679008CB956 /* TriviaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BD6D342BA14679008CB956 /* TriviaViewController.swift */; };
-		14BD6D372BA16563008CB956 /* Trivia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BD6D362BA16563008CB956 /* Trivia.swift */; };
 		9926AB2429DFAE1400860532 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926AB2329DFAE1400860532 /* AppDelegate.swift */; };
 		9926AB2629DFAE1400860532 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926AB2529DFAE1400860532 /* SceneDelegate.swift */; };
 		9926AB2B29DFAE1400860532 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9926AB2929DFAE1400860532 /* Main.storyboard */; };
@@ -42,7 +41,6 @@
 		143103002BA928CF0070AC6F /* TriviaQuestionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuestionService.swift; sourceTree = "<group>"; };
 		143103022BA92F300070AC6F /* TriviaQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuestion.swift; sourceTree = "<group>"; };
 		14BD6D342BA14679008CB956 /* TriviaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaViewController.swift; sourceTree = "<group>"; };
-		14BD6D362BA16563008CB956 /* Trivia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trivia.swift; sourceTree = "<group>"; };
 		9926AB2029DFAE1400860532 /* Trivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trivia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9926AB2329DFAE1400860532 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9926AB2529DFAE1400860532 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,7 +108,6 @@
 				14BD6D342BA14679008CB956 /* TriviaViewController.swift */,
 				143103002BA928CF0070AC6F /* TriviaQuestionService.swift */,
 				143103022BA92F300070AC6F /* TriviaQuestion.swift */,
-				14BD6D362BA16563008CB956 /* Trivia.swift */,
 				9926AB2929DFAE1400860532 /* Main.storyboard */,
 				9926AB2C29DFAE1400860532 /* Assets.xcassets */,
 				9926AB2E29DFAE1400860532 /* LaunchScreen.storyboard */,
@@ -270,7 +267,6 @@
 				143103012BA928CF0070AC6F /* TriviaQuestionService.swift in Sources */,
 				9926AB2429DFAE1400860532 /* AppDelegate.swift in Sources */,
 				14BD6D352BA14679008CB956 /* TriviaViewController.swift in Sources */,
-				14BD6D372BA16563008CB956 /* Trivia.swift in Sources */,
 				143103032BA92F300070AC6F /* TriviaQuestion.swift in Sources */,
 				9926AB2629DFAE1400860532 /* SceneDelegate.swift in Sources */,
 			);

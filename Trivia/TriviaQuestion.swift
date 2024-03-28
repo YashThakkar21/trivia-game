@@ -9,12 +9,23 @@ import Foundation
 import UIKit
 
 struct TriviaAPIResponse: Decodable {
-  let results: TriviaQuestion
+  let triviaQuestion: [TriviaQuestion]
+    
+    private enum CodingKeys: String, CodingKey {
+        case triviaQuestion = "results"
+    }
 }
 
 struct TriviaQuestion: Decodable {
     let category: String
     let question: String
-    let correct_answer: String
-    let incorrect_answers: [String]
+    let correctAnswer: String
+    let incorrectAnswers: [String]
+    
+    private enum CodingKeys: String, CodingKey {
+        case category = "category"
+        case question = "question"
+        case correctAnswer = "correct_answer"
+        case incorrectAnswers = "incorrect_answers"
+    }
 }
